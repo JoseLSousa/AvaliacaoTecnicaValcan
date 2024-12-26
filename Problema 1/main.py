@@ -3,7 +3,7 @@ import shutil
 from datetime import datetime, timedelta
 
 # Caminho para o diretório onde os arquivos para backup estão
-directory = './home/valcann/backupsForm/'
+directory = './Problema 1/home/valcann/backupsForm/'
 
 # Verifica se o caminho para o diretório está acessível
 if not os.path.exists(directory):
@@ -16,7 +16,7 @@ today = datetime.today()
 # Lista os arquivos no diretório
 files = os.listdir(directory)
 
-destinationPath = './home/valcann/backupsTo'
+destinationPath = './Problema 1/home/valcann/backupsTo'
 
 for item in files:
     # Caminho completo do arquivo
@@ -45,7 +45,7 @@ for item in files:
                 shutil.copy(filePath, destinationPath)
                 
         # Escreve as informações no arquivo de log
-        with open('./home/valcann/BackupsForm.log', 'a') as file:
-            file.write(f"Nome do arquivo: {item} Tamanho: {fileSize}, Criado em: {createdAt.strftime('%d/%m/%Y, %H:%M:%S')}, Última modificação: {lastModification.strftime('%d/%m/%Y, %H:%M:%S')}\n")
+        with open('./Problema 1/home/valcann/BackupsForm.log', 'a') as file:
+            file.write(f"Nome do arquivo: {item} Tamanho: {fileSize}, Criado em: {createdAt.strftime('%d/%m/%Y, %H:%M:%S')}, Ultima modificacao: {lastModification.strftime('%d/%m/%Y, %H:%M:%S')}\n")
         
 print("Operação concluída com sucesso.")
